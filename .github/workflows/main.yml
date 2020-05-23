@@ -58,4 +58,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: userjs
-        path: dist/ShinyColors.user.js
+        path: ShinyColors/dist/ShinyColors.user.js
