@@ -40,6 +40,7 @@ jobs:
       run: |
            rm -rf ShinyColors/data 
            mv -f shinymaskr/data ShinyColors
+           cd shinymaskr
            yarn build
     - name: check js exists
       run: '(test -f dist/ShinyColors.user.js && echo ShinyColors.user.js exists) || echo ShinyColors.user.js does not exist, skipping step'
