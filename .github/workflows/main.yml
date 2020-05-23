@@ -51,5 +51,5 @@ jobs:
     - name: check js exists
       working-directory: ./ShinyColors
       run: |
-        test -f ./dist/ShinyColors.user.js && echo ShinyColors.user.js exists) || echo ShinyColors.user.js does not exist, skipping step
+        (test -f ./dist/ShinyColors.user.js && echo ShinyColors.user.js exists) || echo ShinyColors.user.js does not exist, skipping step
         # 이후 생성된 스크립트를 'https://github.com/crazy-max/ghaction-github-pages'를 이용해 gh-pages로 복사함
