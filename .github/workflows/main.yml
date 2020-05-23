@@ -32,8 +32,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+    - name: Check repo
+      run: |
+          ls ShinyColors
+          ls shinymaskr
     - name: Copy data
       run: |
-           rm -rf ShinyColors/Data 
-           mv -f shinymaskr/Data ShinyColors
+           rm -rf ShinyColors/data 
+           mv -f shinymaskr/data ShinyColors
            yarn build
+    - name: check js exists
+      run: '(test -f dist/ShinyColors.user.js && echo ShinyColors.user.js exists) || echo ShinyColors.user.js does not exist, skipping step'
