@@ -45,9 +45,11 @@ jobs:
       working-directory: ./ShinyColors
       run: yarn --frozen-lockfile
     - name: Build
+      working-directory: ./ShinyColors
       run: |
         yarn build
     - name: check js exists
+      working-directory: ./ShinyColors
       run: |
         tree
         test -f script/build.js && echo ShinyColors.user.js exists) || echo ShinyColors.user.js does not exist, skipping step
