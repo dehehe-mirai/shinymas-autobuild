@@ -23,14 +23,17 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Clone repos
       run: |
         git clone https://github.com/biuuu/ShinyColors
         git clone https://github.com/newbiepr/shinymaskr
-        ls
-        rm -rf ShinyColors/data
-        cp shinymaskr/Data ShinyColors/data
-        npm install -g yarn
-        yarn install
-        yarn build
         
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Copy data
+      run: |
+           rm -rf ShinyColors/Data 
+           mv -f shinymaskr/Data ShinyColors
+           yarn build
