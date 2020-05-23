@@ -42,7 +42,8 @@ jobs:
            mv -f shinymaskr/data ShinyColors
     - name: Build
       working-directory: ./shinymaskr
-           yarn build
+      run: |
+        yarn build
     - name: check js exists
       run: |
         ls
