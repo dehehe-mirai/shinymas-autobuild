@@ -42,9 +42,9 @@ jobs:
            mv -f shinymaskr/data ShinyColors
            
     - name: Install dependencies
+      working-directory: ./ShinyColors
       run: yarn --frozen-lockfile
     - name: Build
-      working-directory: ./ShinyColors
       run: |
         yarn build
     - name: check js exists
