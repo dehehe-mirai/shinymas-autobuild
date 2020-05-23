@@ -57,5 +57,5 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: ShinyColors/dist
-        path: ShinyColors/dist
+        name: userjs
+        path: dist/ShinyColors.user.js
