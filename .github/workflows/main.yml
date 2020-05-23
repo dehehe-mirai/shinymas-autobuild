@@ -41,10 +41,12 @@ jobs:
            rm -rf ShinyColors/data 
            mv -f shinymaskr/data ShinyColors
     - name: Build
-      working-directory: ./shinymaskr
+      working-directory: ./ShinyColors
       run: |
         yarn build
     - name: check js exists
       run: |
         ls
+        ls dist
+        tree
         test -f dist/ShinyColors.user.js && echo ShinyColors.user.js exists) || echo ShinyColors.user.js does not exist, skipping step
