@@ -57,6 +57,5 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v1
       with:
-        working-directory: ./ShinyColors
-        name: dist
-        path: dist
+        name: ShinyColors/dist
+        path: ShinyColors/dist
